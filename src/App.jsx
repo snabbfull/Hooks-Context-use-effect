@@ -4,15 +4,11 @@ import { List } from './components/List.jsx'
 import { Details } from './components/Details.jsx'
 
 function App() {
-  const [id, setId] = useState(undefined);
-  
-  async function selectId(id) {
-    setId(id);
-  }
+  const [id, setId] = useState(null);
 
   return (
     <div className='container'>
-      <List onClick={selectId}/>
+      <List onSelect={setId} selectedId={id} />
       <Details id={id}/>
     </div>
   )

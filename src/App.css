@@ -1,0 +1,93 @@
+/* ===== Общие стили ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ===== Контейнер приложения ===== */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+/* ===== Список пользователей ===== */
+.user-list {
+  width: 220px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.user {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.user:last-child {
+  border-bottom: none;
+}
+
+.user:hover {
+  background-color: #f5f5f5;
+}
+
+.user.active {
+  background-color: #e0edff;
+  font-weight: bold;
+}
+
+/* ===== Карточка пользователя ===== */
+.user-details {
+  min-width: 260px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.user-avatar {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.user-name {
+  margin: 0 0 12px;
+}
+
+.user-details h4 {
+  margin: 6px 0;
+  font-weight: normal;
+}
+
+/* ===== Индикатор загрузки ===== */
+.user-loading {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* ===== Сообщение об ошибке ===== */
+.error {
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #f87171;
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-radius: 4px;
+}

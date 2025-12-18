@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export function List( { onClick } ) {
+export function List( { onSelect, selectedId } ) {
   const [data, setData] = useState([]);
 
   useEffect(() =>{
@@ -15,14 +15,19 @@ export function List( { onClick } ) {
       }
 
       fetchData();
-    }, []
-  );
+    }, []);
 
   return (
-    <div className="user-list">
+    <ul className="user-list">
       {data.map((user) => (
-        <div className="user" key={user.id} onClick={() => onClick(user.id)}>{user.name}</div>
+        <li
+          className={`user ${user.id === selectedId ? "active" : ""}`}
+          key={user.id}
+          onClick={() => onSelect(user.id)}
+        >
+          {user.name}
+        </li>
       ))}
-    </div>
-  )
+    </ul>
+  );
 }

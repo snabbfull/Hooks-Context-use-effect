@@ -7,12 +7,6 @@ export function Details({ id }) {
   useEffect(()=> {
     if (!id) {
       setUser(null);
-      setLoading(false);
-      return;
-    }
-
-    // Если пользователь уже загружен и совпадает по id — НЕ ГРУЗИМ ПОВТОРНО
-    if (user && user.id === id) {
       return;
     }
 
@@ -29,14 +23,14 @@ export function Details({ id }) {
       }
     }
     fetchUser();
-  }, [id, user])
+  }, [id]);
 
   if (loading) {
-    return <div className="user-details">Loading...</div>;
+    return <div className="user-loading">Loading...</div>;
   }
 
   if (!user) {
-    return;
+    return null;
   }
   
   return (
